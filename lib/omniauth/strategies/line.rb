@@ -25,9 +25,17 @@ module OmniAuth
         {
           name:        raw_info['displayName'],
           image:       raw_info['pictureUrl'],
-          description: access_token.params[:id_token]          
+          description: raw_info['statusMessage']
         }
       end
+      extra do
+        {
+          'description1' => access_token.params[:id_token],
+          'description2' => access_token.params['id_token'],
+          'hoge'         => "hogehoge"
+        }
+      end
+
 
       # Require: Access token with PROFILE permission issued.
       def raw_info
