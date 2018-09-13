@@ -30,9 +30,7 @@ module OmniAuth
       end
       extra do
         {
-          'description1' => access_token.params[:id_token],
-          'description2' => access_token.params['id_token'],
-          'hoge'         => "hogehoge"
+          'id_token' => access_token.params['id_token']
         }
       end
 
