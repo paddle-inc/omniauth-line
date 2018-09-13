@@ -28,6 +28,12 @@ module OmniAuth
           description: raw_info['statusMessage']
         }
       end
+      extra do
+        {
+          'id_token' => access_token.params['id_token']
+        }
+      end
+
 
       # Require: Access token with PROFILE permission issued.
       def raw_info
